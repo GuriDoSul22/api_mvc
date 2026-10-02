@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs com API</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="abrirTab(0)">Listar Clientes</button>
+        <button class="tab-btn" onclick="abrirTab(1)">Cadastrar Cliente</button>
+    </div>
+    <a id="logout" class="logout-link" onclick="logout()">Logout</a>
+
+    <!-- TAB 1 -->
+    <div class="tab-content active">
+        <h2>Clientes Cadastrados</h2>
+
+        <div class="search-container">
+            <input type="text" id="busca_cpf" placeholder="Buscar por CPF">
+            <button onclick="buscarClientes()">Buscar</button>
+            <button onclick="listarClientes()" style="background: #6c757d;">Limpar</button>
+        </div>
+
+        <div id="listaClientes" class="client-list"></div>
+    </div>
+
+    <!-- TAB 2 -->
+    <div class="tab-content">
+        <h2>Cadastrar Cliente</h2>
+
+        <input type="text" id="cliente_cpf" placeholder="CPF">
+        <input type="text" id="cliente_nome" placeholder="Nome">
+        <input type="text" id="cliente_idade" placeholder="Idade">
+        <input type="text" id="cliente_endereco" placeholder="Endereço">
+        <input type="text" id="cliente_bairro" placeholder="Bairro">
+        <input type="text" id="cliente_contato" placeholder="Contato">
+
+        <button onclick="cadastrarCliente()">Cadastrar Cliente</button>
+
+        <div class="resultado" id="resultadoCliente"></div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
